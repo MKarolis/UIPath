@@ -100,7 +100,11 @@
       <Variable x:TypeArguments="ui:WorkbookApplication" Name="WORKBOOK" />
       <Variable x:TypeArguments="x:String" Name="textVal" />
       <Variable x:TypeArguments="x:String" Name="copiedText" />
-      <Variable x:TypeArguments="scg:Dictionary(x:String, scg:List(x:String))" Name="docDictionary" />
+      <Variable x:TypeArguments="scg:Dictionary(x:String, scg:List(x:String))" Name="docDictionary">
+        <Variable.Default>
+          <mca:CSharpValue x:TypeArguments="scg:Dictionary(x:String, scg:List(x:String))" sap2010:WorkflowViewState.IdRef="CSharpValue`1_90">new Dictionary&lt;string, List&lt;String&gt;&gt;()</mca:CSharpValue>
+        </Variable.Default>
+      </Variable>
       <Variable x:TypeArguments="s:String[]" Name="wbDocNames" />
       <Variable x:TypeArguments="s:String[]" Name="wbDocEN" />
       <Variable x:TypeArguments="s:String[]" Name="wbDocLT" />
@@ -116,9 +120,9 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Reference>__ReferenceID15</x:Reference>
+      <x:Reference>__ReferenceID16</x:Reference>
     </Flowchart.StartNode>
-    <FlowStep x:Name="__ReferenceID15">
+    <FlowStep x:Name="__ReferenceID16">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">200,117</av:Point>
@@ -206,7 +210,7 @@
         </ui:WaitUiElementVanish>
       </Sequence>
       <FlowStep.Next>
-        <FlowStep x:Name="__ReferenceID12">
+        <FlowStep x:Name="__ReferenceID13">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">200,224.5</av:Point>
@@ -464,7 +468,7 @@
                   <av:PointCollection x:Key="ConnectorLocation">300,165.5 300,184.5</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Go Edit Doktorantu Sarasai" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="wf_editPageById.xaml">
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Go Edit Doktorantu Sarasai" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="wf_editPageById.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <InArgument x:TypeArguments="x:String" x:Key="ARTICLE_SEARCH_PATH">
                     <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_32">ARTICLE_SEARCH_PATH</mca:CSharpValue>
@@ -486,7 +490,7 @@
             <x:Reference>__ReferenceID4</x:Reference>
           </Flowchart>
           <FlowStep.Next>
-            <FlowStep x:Name="__ReferenceID13">
+            <FlowStep x:Name="__ReferenceID14">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">200,325.5</av:Point>
@@ -1052,155 +1056,176 @@
                 </ui:CommentOut.Body>
               </ui:CommentOut>
               <FlowStep.Next>
-                <FlowStep x:Name="__ReferenceID14">
+                <FlowStep x:Name="__ReferenceID15">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <av:Point x:Key="ShapeLocation">200,426.5</av:Point>
-                      <av:Size x:Key="ShapeSize">200,66</av:Size>
+                      <av:Size x:Key="ShapeSize">200,51</av:Size>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Sequence DisplayName="Doktoranto duomenu nuskaitymas" sap:VirtualizedContainerService.HintSize="494,1657" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                  <Flowchart DisplayName="Doktorantu duomenu tvarkymas" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Flowchart_4">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
+                        <av:Size x:Key="ShapeSize">60,75</av:Size>
+                        <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,127.5</av:PointCollection>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:ExcelApplicationScope Password="{x:Null}" WorkbookPath="{x:Null}" CreateNewFile="False" DisplayName="Generate and read Metai LT" sap:VirtualizedContainerService.HintSize="452,1565" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_7" InstanceCachePeriod="3000">
-                      <ui:ExcelApplicationScope.Body>
-                        <ActivityAction x:TypeArguments="ui:WorkbookApplication">
-                          <ActivityAction.Argument>
-                            <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
-                          </ActivityAction.Argument>
-                          <Sequence sap:VirtualizedContainerService.HintSize="418,1456" sap2010:WorkflowViewState.IdRef="Sequence_31">
-                            <Sequence.Variables>
-                              <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="wbRows" />
-                              <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="readValue" />
-                            </Sequence.Variables>
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,151" sap2010:WorkflowViewState.IdRef="Sequence_30">
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                              <ui:ExecuteMacro ContinueOnError="{x:Null}" MacroOutput="{x:Null}" DisplayName="Generate &quot;Metai&quot;" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExecuteMacro_6" MacroName="doktorantu_baze.xlsm!ThisWorkbook.doktorantas" />
-                            </Sequence>
-                            <Assign sap:VirtualizedContainerService.HintSize="376,60" sap2010:WorkflowViewState.IdRef="Assign_14">
-                              <Assign.To>
-                                <OutArgument x:TypeArguments="x:String">
-                                  <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_35">textVal</mca:CSharpReference>
-                                </OutArgument>
-                              </Assign.To>
-                              <Assign.Value>
-                                <InArgument x:TypeArguments="x:String">
-                                  <Literal x:TypeArguments="x:String" Value="" />
-                                </InArgument>
-                              </Assign.Value>
-                            </Assign>
-                            <ui:ExcelReadColumn DisplayName="Read DoktorantasName" sap:VirtualizedContainerService.HintSize="376,59" sap2010:WorkflowViewState.IdRef="ExcelReadColumn_8" SheetName="Doktorantas" StartingCell="A2">
-                              <ui:ExcelReadColumn.Result>
-                                <OutArgument x:TypeArguments="scg:IEnumerable(x:Object)">
-                                  <mca:CSharpReference x:TypeArguments="scg:IEnumerable(x:Object)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_58">readValue</mca:CSharpReference>
-                                </OutArgument>
-                              </ui:ExcelReadColumn.Result>
-                            </ui:ExcelReadColumn>
-                            <ui:InvokeCode ContinueOnError="{x:Null}" Code="wbDocNames = enumList.Cast&lt;string&gt;().ToArray();" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="376,164" sap2010:WorkflowViewState.IdRef="InvokeCode_6" Language="CSharp">
-                              <ui:InvokeCode.Arguments>
-                                <InOutArgument x:TypeArguments="scg:IEnumerable(x:Object)" x:Key="enumList">
-                                  <mca:CSharpReference x:TypeArguments="scg:IEnumerable(x:Object)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_65">readValue</mca:CSharpReference>
-                                </InOutArgument>
-                                <InOutArgument x:TypeArguments="s:String[]" x:Key="wbDocNames">
-                                  <mca:CSharpReference x:TypeArguments="s:String[]" sap2010:WorkflowViewState.IdRef="CSharpReference`1_74">wbDocNames</mca:CSharpReference>
-                                </InOutArgument>
-                              </ui:InvokeCode.Arguments>
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                            </ui:InvokeCode>
-                            <ui:ExcelReadColumn DisplayName="Read DoktorantasLT" sap:VirtualizedContainerService.HintSize="376,59" sap2010:WorkflowViewState.IdRef="ExcelReadColumn_9" SheetName="Doktorantas" StartingCell="B2">
-                              <ui:ExcelReadColumn.Result>
-                                <OutArgument x:TypeArguments="scg:IEnumerable(x:Object)">
-                                  <mca:CSharpReference x:TypeArguments="scg:IEnumerable(x:Object)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_60">readValue</mca:CSharpReference>
-                                </OutArgument>
-                              </ui:ExcelReadColumn.Result>
-                            </ui:ExcelReadColumn>
-                            <ui:InvokeCode ContinueOnError="{x:Null}" Code="wbDocNames = enumList.Cast&lt;string&gt;().ToArray();" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="376,164" sap2010:WorkflowViewState.IdRef="InvokeCode_9" Language="CSharp">
-                              <ui:InvokeCode.Arguments>
-                                <InOutArgument x:TypeArguments="scg:IEnumerable(x:Object)" x:Key="enumList">
-                                  <mca:CSharpReference x:TypeArguments="scg:IEnumerable(x:Object)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_71">readValue</mca:CSharpReference>
-                                </InOutArgument>
-                                <InOutArgument x:TypeArguments="s:String[]" x:Key="wbDocNames">
-                                  <mca:CSharpReference x:TypeArguments="s:String[]" sap2010:WorkflowViewState.IdRef="CSharpReference`1_75">wbDocLT</mca:CSharpReference>
-                                </InOutArgument>
-                              </ui:InvokeCode.Arguments>
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                            </ui:InvokeCode>
-                            <ui:ExcelReadColumn DisplayName="Read DoktorantasEN" sap:VirtualizedContainerService.HintSize="376,59" sap2010:WorkflowViewState.IdRef="ExcelReadColumn_10" SheetName="Doktorantas" StartingCell="C2">
-                              <ui:ExcelReadColumn.Result>
-                                <OutArgument x:TypeArguments="scg:IEnumerable(x:Object)">
-                                  <mca:CSharpReference x:TypeArguments="scg:IEnumerable(x:Object)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_62">readValue</mca:CSharpReference>
-                                </OutArgument>
-                              </ui:ExcelReadColumn.Result>
-                            </ui:ExcelReadColumn>
-                            <ui:InvokeCode ContinueOnError="{x:Null}" Code="wbDocNames = enumList.Cast&lt;string&gt;().ToArray();" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="376,164" sap2010:WorkflowViewState.IdRef="InvokeCode_10" Language="CSharp">
-                              <ui:InvokeCode.Arguments>
-                                <InOutArgument x:TypeArguments="scg:IEnumerable(x:Object)" x:Key="enumList">
-                                  <mca:CSharpReference x:TypeArguments="scg:IEnumerable(x:Object)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_73">readValue</mca:CSharpReference>
-                                </InOutArgument>
-                                <InOutArgument x:TypeArguments="s:String[]" x:Key="wbDocNames">
-                                  <mca:CSharpReference x:TypeArguments="s:String[]" sap2010:WorkflowViewState.IdRef="CSharpReference`1_76">wbDocEN</mca:CSharpReference>
-                                </InOutArgument>
-                              </ui:InvokeCode.Arguments>
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                            </ui:InvokeCode>
-                            <ui:InvokeCode ContinueOnError="{x:Null}" Code="string tempLT = docLT[0];&#xD;&#xA;string tempEN = docEN[0];&#xD;&#xA;&#xD;&#xA;        for(int i = 0; i &lt; nameList.Count()-1; i++) {&#xD;&#xA;            if(!nameMap.ContainsKey(nameList[i]) &amp;&amp; nameList[i] == nameList[i+1]) {&#xD;&#xA;                tempLT += docLT[i+1];&#xD;&#xA;                tempEN += docEN[i+1];&#xD;&#xA;            } else {&#xD;&#xA;                if(nameMap.ContainsKey(nameList[i])) continue;&#xD;&#xA;                Console.WriteLine(i);&#xD;&#xA;                nameMap.Add(nameList[i], new List&lt;String&gt;(new string[] {tempLT, tempEN}));&#xD;&#xA;                tempLT = docLT[i+1];&#xD;&#xA;                tempEN = docEN[i+1];&#xD;&#xA;            }&#xD;&#xA;        }&#xD;&#xA;            if(!nameMap.ContainsKey(nameList[nameList.Count()-1])) nameMap.Add(nameList[nameList.Count()-1], new List&lt;String&gt;(new string[] {tempLT, tempEN}));" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="376,164" sap2010:WorkflowViewState.IdRef="InvokeCode_5" Language="CSharp">
-                              <ui:InvokeCode.Arguments>
-                                <InOutArgument x:TypeArguments="s:String[]" x:Key="nameList">
-                                  <mca:CSharpReference x:TypeArguments="s:String[]" sap2010:WorkflowViewState.IdRef="CSharpReference`1_79">wbDocNames</mca:CSharpReference>
-                                </InOutArgument>
-                                <InOutArgument x:TypeArguments="s:String[]" x:Key="docLT">
-                                  <mca:CSharpReference x:TypeArguments="s:String[]" sap2010:WorkflowViewState.IdRef="CSharpReference`1_77">wbDocLT</mca:CSharpReference>
-                                </InOutArgument>
-                                <InOutArgument x:TypeArguments="s:String[]" x:Key="docEN">
-                                  <mca:CSharpReference x:TypeArguments="s:String[]" sap2010:WorkflowViewState.IdRef="CSharpReference`1_78">wbDocEN</mca:CSharpReference>
-                                </InOutArgument>
-                                <InOutArgument x:TypeArguments="scg:Dictionary(x:String, scg:List(x:String))" x:Key="nameMap">
-                                  <mca:CSharpReference x:TypeArguments="scg:Dictionary(x:String, scg:List(x:String))" sap2010:WorkflowViewState.IdRef="CSharpReference`1_42">docDictionary</mca:CSharpReference>
-                                </InOutArgument>
-                              </ui:InvokeCode.Arguments>
-                            </ui:InvokeCode>
-                          </Sequence>
-                        </ActivityAction>
-                      </ui:ExcelApplicationScope.Body>
-                      <ui:ExcelApplicationScope.ExistingWorkbook>
-                        <InArgument x:TypeArguments="ui:WorkbookApplication">
-                          <mca:CSharpValue x:TypeArguments="ui:WorkbookApplication" sap2010:WorkflowViewState.IdRef="CSharpValue`1_65">WORKBOOK</mca:CSharpValue>
-                        </InArgument>
-                      </ui:ExcelApplicationScope.ExistingWorkbook>
+                    <Flowchart.StartNode>
+                      <x:Reference>__ReferenceID12</x:Reference>
+                    </Flowchart.StartNode>
+                    <FlowStep x:Name="__ReferenceID12">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <av:Point x:Key="ShapeLocation">200,127.5</av:Point>
+                          <av:Size x:Key="ShapeSize">200,66</av:Size>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                    </ui:ExcelApplicationScope>
-                  </Sequence>
+                      <Sequence DisplayName="Doktoranto duomenu nuskaitymas" sap:VirtualizedContainerService.HintSize="494,1657" sap2010:WorkflowViewState.IdRef="Sequence_47">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:ExcelApplicationScope Password="{x:Null}" WorkbookPath="{x:Null}" CreateNewFile="False" DisplayName="Generate and read Metai LT" sap:VirtualizedContainerService.HintSize="452,1565" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_8" InstanceCachePeriod="3000">
+                          <ui:ExcelApplicationScope.Body>
+                            <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                              </ActivityAction.Argument>
+                              <Sequence sap:VirtualizedContainerService.HintSize="418,1456" sap2010:WorkflowViewState.IdRef="Sequence_46">
+                                <Sequence.Variables>
+                                  <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="wbRows" />
+                                  <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="readValue" />
+                                </Sequence.Variables>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,151" sap2010:WorkflowViewState.IdRef="Sequence_45">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:ExecuteMacro ContinueOnError="{x:Null}" MacroOutput="{x:Null}" DisplayName="Generate &quot;Metai&quot;" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExecuteMacro_7" MacroName="doktorantu_baze.xlsm!ThisWorkbook.doktorantas" />
+                                </Sequence>
+                                <Assign sap:VirtualizedContainerService.HintSize="376,60" sap2010:WorkflowViewState.IdRef="Assign_18">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:String">
+                                      <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_80">textVal</mca:CSharpReference>
+                                    </OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:String">
+                                      <Literal x:TypeArguments="x:String" Value="" />
+                                    </InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                                <ui:ExcelReadColumn DisplayName="Read DoktorantasName" sap:VirtualizedContainerService.HintSize="376,59" sap2010:WorkflowViewState.IdRef="ExcelReadColumn_11" SheetName="Doktorantas" StartingCell="A2">
+                                  <ui:ExcelReadColumn.Result>
+                                    <OutArgument x:TypeArguments="scg:IEnumerable(x:Object)">
+                                      <mca:CSharpReference x:TypeArguments="scg:IEnumerable(x:Object)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_81">readValue</mca:CSharpReference>
+                                    </OutArgument>
+                                  </ui:ExcelReadColumn.Result>
+                                </ui:ExcelReadColumn>
+                                <ui:InvokeCode ContinueOnError="{x:Null}" Code="wbDocNames = enumList.Cast&lt;string&gt;().ToArray();" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="376,164" sap2010:WorkflowViewState.IdRef="InvokeCode_11" Language="CSharp">
+                                  <ui:InvokeCode.Arguments>
+                                    <InOutArgument x:TypeArguments="scg:IEnumerable(x:Object)" x:Key="enumList">
+                                      <mca:CSharpReference x:TypeArguments="scg:IEnumerable(x:Object)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_82">readValue</mca:CSharpReference>
+                                    </InOutArgument>
+                                    <InOutArgument x:TypeArguments="s:String[]" x:Key="wbDocNames">
+                                      <mca:CSharpReference x:TypeArguments="s:String[]" sap2010:WorkflowViewState.IdRef="CSharpReference`1_83">wbDocNames</mca:CSharpReference>
+                                    </InOutArgument>
+                                  </ui:InvokeCode.Arguments>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </ui:InvokeCode>
+                                <ui:ExcelReadColumn DisplayName="Read DoktorantasLT" sap:VirtualizedContainerService.HintSize="376,59" sap2010:WorkflowViewState.IdRef="ExcelReadColumn_12" SheetName="Doktorantas" StartingCell="B2">
+                                  <ui:ExcelReadColumn.Result>
+                                    <OutArgument x:TypeArguments="scg:IEnumerable(x:Object)">
+                                      <mca:CSharpReference x:TypeArguments="scg:IEnumerable(x:Object)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_84">readValue</mca:CSharpReference>
+                                    </OutArgument>
+                                  </ui:ExcelReadColumn.Result>
+                                </ui:ExcelReadColumn>
+                                <ui:InvokeCode ContinueOnError="{x:Null}" Code="wbDocNames = enumList.Cast&lt;string&gt;().ToArray();" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="376,164" sap2010:WorkflowViewState.IdRef="InvokeCode_12" Language="CSharp">
+                                  <ui:InvokeCode.Arguments>
+                                    <InOutArgument x:TypeArguments="scg:IEnumerable(x:Object)" x:Key="enumList">
+                                      <mca:CSharpReference x:TypeArguments="scg:IEnumerable(x:Object)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_85">readValue</mca:CSharpReference>
+                                    </InOutArgument>
+                                    <InOutArgument x:TypeArguments="s:String[]" x:Key="wbDocNames">
+                                      <mca:CSharpReference x:TypeArguments="s:String[]" sap2010:WorkflowViewState.IdRef="CSharpReference`1_86">wbDocLT</mca:CSharpReference>
+                                    </InOutArgument>
+                                  </ui:InvokeCode.Arguments>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </ui:InvokeCode>
+                                <ui:ExcelReadColumn DisplayName="Read DoktorantasEN" sap:VirtualizedContainerService.HintSize="376,59" sap2010:WorkflowViewState.IdRef="ExcelReadColumn_13" SheetName="Doktorantas" StartingCell="C2">
+                                  <ui:ExcelReadColumn.Result>
+                                    <OutArgument x:TypeArguments="scg:IEnumerable(x:Object)">
+                                      <mca:CSharpReference x:TypeArguments="scg:IEnumerable(x:Object)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_87">readValue</mca:CSharpReference>
+                                    </OutArgument>
+                                  </ui:ExcelReadColumn.Result>
+                                </ui:ExcelReadColumn>
+                                <ui:InvokeCode ContinueOnError="{x:Null}" Code="wbDocNames = enumList.Cast&lt;string&gt;().ToArray();" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="376,164" sap2010:WorkflowViewState.IdRef="InvokeCode_13" Language="CSharp">
+                                  <ui:InvokeCode.Arguments>
+                                    <InOutArgument x:TypeArguments="scg:IEnumerable(x:Object)" x:Key="enumList">
+                                      <mca:CSharpReference x:TypeArguments="scg:IEnumerable(x:Object)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_88">readValue</mca:CSharpReference>
+                                    </InOutArgument>
+                                    <InOutArgument x:TypeArguments="s:String[]" x:Key="wbDocNames">
+                                      <mca:CSharpReference x:TypeArguments="s:String[]" sap2010:WorkflowViewState.IdRef="CSharpReference`1_89">wbDocEN</mca:CSharpReference>
+                                    </InOutArgument>
+                                  </ui:InvokeCode.Arguments>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </ui:InvokeCode>
+                                <ui:InvokeCode ContinueOnError="{x:Null}" Code="string tempLT = docLT[0];&#xA;string tempEN = docEN[0];&#xA;&#xA;        for(int i = 0; i &lt; nameList.Count()-1; i++) {&#xA;            if(!nameMap.ContainsKey(nameList[i]) &amp;&amp; nameList[i] == nameList[i+1]) {&#xA;                tempLT += Environment.NewLine + docLT[i+1];&#xA;                tempEN += Environment.NewLine + docEN[i+1];&#xA;            }&#xA;&#x9;&#x9; else {&#xA;                if(nameMap.ContainsKey(nameList[i])) continue;&#xA;                nameMap.Add(nameList[i], new List&lt;String&gt;(new string[] {tempLT, tempEN}));&#xA;                tempLT = docLT[i+1];&#xA;                tempEN = docEN[i+1];&#xA;            }&#xA;        }&#xA;            if(!nameMap.ContainsKey(nameList[nameList.Count()-1])) nameMap.Add(nameList[nameList.Count()-1], new List&lt;String&gt;(new string[] {tempLT, tempEN}));" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="376,164" sap2010:WorkflowViewState.IdRef="InvokeCode_14" Language="CSharp">
+                                  <ui:InvokeCode.Arguments>
+                                    <InOutArgument x:TypeArguments="s:String[]" x:Key="nameList">
+                                      <mca:CSharpReference x:TypeArguments="s:String[]" sap2010:WorkflowViewState.IdRef="CSharpReference`1_90">wbDocNames</mca:CSharpReference>
+                                    </InOutArgument>
+                                    <InOutArgument x:TypeArguments="s:String[]" x:Key="docLT">
+                                      <mca:CSharpReference x:TypeArguments="s:String[]" sap2010:WorkflowViewState.IdRef="CSharpReference`1_91">wbDocLT</mca:CSharpReference>
+                                    </InOutArgument>
+                                    <InOutArgument x:TypeArguments="s:String[]" x:Key="docEN">
+                                      <mca:CSharpReference x:TypeArguments="s:String[]" sap2010:WorkflowViewState.IdRef="CSharpReference`1_92">wbDocEN</mca:CSharpReference>
+                                    </InOutArgument>
+                                    <InOutArgument x:TypeArguments="scg:Dictionary(x:String, scg:List(x:String))" x:Key="nameMap">
+                                      <mca:CSharpReference x:TypeArguments="scg:Dictionary(x:String, scg:List(x:String))" sap2010:WorkflowViewState.IdRef="CSharpReference`1_93">docDictionary</mca:CSharpReference>
+                                    </InOutArgument>
+                                  </ui:InvokeCode.Arguments>
+                                </ui:InvokeCode>
+                              </Sequence>
+                            </ActivityAction>
+                          </ui:ExcelApplicationScope.Body>
+                          <ui:ExcelApplicationScope.ExistingWorkbook>
+                            <InArgument x:TypeArguments="ui:WorkbookApplication">
+                              <mca:CSharpValue x:TypeArguments="ui:WorkbookApplication" sap2010:WorkflowViewState.IdRef="CSharpValue`1_101">WORKBOOK</mca:CSharpValue>
+                            </InArgument>
+                          </ui:ExcelApplicationScope.ExistingWorkbook>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:ExcelApplicationScope>
+                      </Sequence>
+                    </FlowStep>
+                  </Flowchart>
                 </FlowStep>
               </FlowStep.Next>
             </FlowStep>
@@ -1208,8 +1233,8 @@
         </FlowStep>
       </FlowStep.Next>
     </FlowStep>
-    <x:Reference>__ReferenceID12</x:Reference>
     <x:Reference>__ReferenceID13</x:Reference>
     <x:Reference>__ReferenceID14</x:Reference>
+    <x:Reference>__ReferenceID15</x:Reference>
   </Flowchart>
 </Activity>
