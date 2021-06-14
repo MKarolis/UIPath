@@ -578,7 +578,7 @@
                                     </InArgument>
                                   </Assign.Value>
                                 </Assign>
-                                <ui:ExcelReadColumn DisplayName="Read Column" sap:VirtualizedContainerService.HintSize="436,59" sap2010:WorkflowViewState.IdRef="ExcelReadColumn_6" SheetName="Metai" StartingCell="A1">
+                                <ui:ExcelReadColumn DisplayName="Read Metai data" sap:VirtualizedContainerService.HintSize="436,59" sap2010:WorkflowViewState.IdRef="ExcelReadColumn_6" SheetName="Metai" StartingCell="A1">
                                   <ui:ExcelReadColumn.Result>
                                     <OutArgument x:TypeArguments="scg:IEnumerable(x:Object)">
                                       <mca:CSharpReference x:TypeArguments="scg:IEnumerable(x:Object)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_21">wbRows</mca:CSharpReference>
@@ -835,7 +835,7 @@
                                                 </InArgument>
                                               </Assign.Value>
                                             </Assign>
-                                            <ui:ExcelReadColumn DisplayName="Read Column" sap:VirtualizedContainerService.HintSize="436,59" sap2010:WorkflowViewState.IdRef="ExcelReadColumn_7" SheetName="Metai" StartingCell="C1">
+                                            <ui:ExcelReadColumn DisplayName="Read Metai data" sap:VirtualizedContainerService.HintSize="436,59" sap2010:WorkflowViewState.IdRef="ExcelReadColumn_7" SheetName="Metai" StartingCell="C1">
                                               <ui:ExcelReadColumn.Result>
                                                 <OutArgument x:TypeArguments="scg:IEnumerable(x:Object)">
                                                   <mca:CSharpReference x:TypeArguments="scg:IEnumerable(x:Object)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_30">wbRows</mca:CSharpReference>
@@ -1086,8 +1086,13 @@
                   </sap:WorkflowViewStateService.ViewState>
                   <ui:CommentOut sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CommentOut_11">
                     <ui:CommentOut.Body>
-                      <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_59">
-                        <Flowchart DisplayName="Doktorantu duomenu tvarkymas" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Flowchart_4">
+                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="676,728" sap2010:WorkflowViewState.IdRef="Sequence_59">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Flowchart DisplayName="Doktorantu duomenu tvarkymas" sap:VirtualizedContainerService.HintSize="634,636" sap2010:WorkflowViewState.IdRef="Flowchart_4">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1107,13 +1112,13 @@
                                 <av:PointCollection x:Key="ConnectorLocation">300,193.5 300,243.5</av:PointCollection>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <Sequence DisplayName="Doktoranto duomenu nuskaitymas" sap:VirtualizedContainerService.HintSize="494,1657" sap2010:WorkflowViewState.IdRef="Sequence_47">
+                            <Sequence DisplayName="Doktoranto duomenu nuskaitymas" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_47">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:ExcelApplicationScope Password="{x:Null}" WorkbookPath="{x:Null}" CreateNewFile="False" DisplayName="Generate and read Metai LT" sap:VirtualizedContainerService.HintSize="452,1565" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_8" InstanceCachePeriod="3000">
+                              <ui:ExcelApplicationScope Password="{x:Null}" WorkbookPath="{x:Null}" CreateNewFile="False" DisplayName="Generate and read Doktorantai data" sap:VirtualizedContainerService.HintSize="452,1565" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_8" InstanceCachePeriod="3000">
                                 <ui:ExcelApplicationScope.Body>
                                   <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                                     <ActivityAction.Argument>
@@ -1135,7 +1140,7 @@
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <ui:ExecuteMacro ContinueOnError="{x:Null}" MacroOutput="{x:Null}" DisplayName="Generate &quot;Metai&quot;" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExecuteMacro_7" MacroName="doktorantu_baze.xlsm!ThisWorkbook.doktorantas" />
+                                        <ui:ExecuteMacro ContinueOnError="{x:Null}" MacroOutput="{x:Null}" DisplayName="Generate &quot;Doktorantai&quot;" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExecuteMacro_7" MacroName="doktorantu_baze.xlsm!ThisWorkbook.doktorantas" />
                                       </Sequence>
                                       <Assign sap:VirtualizedContainerService.HintSize="376,60" sap2010:WorkflowViewState.IdRef="Assign_18">
                                         <Assign.To>
@@ -1218,7 +1223,7 @@
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
                                       </ui:InvokeCode>
-                                      <ui:InvokeCode ContinueOnError="{x:Null}" Code="string tempLT = docLT[0];&#xA;string tempEN = docEN[0];&#xA;&#xA;        for(int i = 0; i &lt; nameList.Count()-1; i++) {&#xA;            if(!nameMap.ContainsKey(nameList[i]) &amp;&amp; nameList[i] == nameList[i+1]) {&#xA;                tempLT += Environment.NewLine + docLT[i+1];&#xA;                tempEN += Environment.NewLine + docEN[i+1];&#xA;            }&#xA;&#x9;&#x9; else {&#xA;                if(nameMap.ContainsKey(nameList[i])) continue;&#xA;                nameMap.Add(nameList[i], new List&lt;String&gt;(new string[] {tempLT, tempEN}));&#xA;                tempLT = docLT[i+1];&#xA;                tempEN = docEN[i+1];&#xA;            }&#xA;        }&#xA;            if(!nameMap.ContainsKey(nameList[nameList.Count()-1])) nameMap.Add(nameList[nameList.Count()-1], new List&lt;String&gt;(new string[] {tempLT, tempEN}));" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="376,164" sap2010:WorkflowViewState.IdRef="InvokeCode_14" Language="CSharp">
+                                      <ui:InvokeCode ContinueOnError="{x:Null}" Code="string tempLT = docLT[0];&#xA;string tempEN = docEN[0];&#xA;&#xA;        for(int i = 0; i &lt; nameList.Count()-1; i++) {&#xA;            if(!nameMap.ContainsKey(nameList[i]) &amp;&amp; nameList[i] == nameList[i+1]) {&#xA;                tempLT += Environment.NewLine + docLT[i+1];&#xA;                tempEN += Environment.NewLine + docEN[i+1];&#xA;            }&#xA;&#x9;&#x9; else {&#xA;                if(nameMap.ContainsKey(nameList[i])) continue;&#xA;                nameMap.Add(nameList[i], new List&lt;String&gt;(new string[] {tempLT, tempEN}));&#xA;                tempLT = docLT[i+1];&#xA;                tempEN = docEN[i+1];&#xA;            }&#xA;        }&#xA;            if(!nameMap.ContainsKey(nameList[nameList.Count()-1])) nameMap.Add(nameList[nameList.Count()-1], new List&lt;String&gt;(new string[] {tempLT, tempEN}));" DisplayName="Assign each doctorant its LT and EN values" sap:VirtualizedContainerService.HintSize="376,164" sap2010:WorkflowViewState.IdRef="InvokeCode_14" Language="CSharp">
                                         <ui:InvokeCode.Arguments>
                                           <InOutArgument x:TypeArguments="s:String[]" x:Key="nameList">
                                             <mca:CSharpReference x:TypeArguments="s:String[]" sap2010:WorkflowViewState.IdRef="CSharpReference`1_90">wbDocNames</mca:CSharpReference>
@@ -1257,20 +1262,20 @@
                                     <av:Size x:Key="ShapeSize">200,66</av:Size>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <Sequence DisplayName="Search For each Doctorant" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_48">
+                                <Sequence DisplayName="Search and edit each doctorant" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_48">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:InvokeCode ContinueOnError="{x:Null}" Code="wbDocNames = wbDocNames.Distinct().ToArray();" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="454,164" sap2010:WorkflowViewState.IdRef="InvokeCode_15" Language="CSharp">
+                                  <ui:InvokeCode ContinueOnError="{x:Null}" Code="wbDocNames = wbDocNames.Distinct().ToArray();" DisplayName="Remove duplicate doctorant name values in array" sap:VirtualizedContainerService.HintSize="454,164" sap2010:WorkflowViewState.IdRef="InvokeCode_15" Language="CSharp">
                                     <ui:InvokeCode.Arguments>
                                       <InOutArgument x:TypeArguments="s:String[]" x:Key="wbDocNames">
                                         <mca:CSharpReference x:TypeArguments="s:String[]" sap2010:WorkflowViewState.IdRef="CSharpReference`1_96">wbDocNames</mca:CSharpReference>
                                       </InOutArgument>
                                     </ui:InvokeCode.Arguments>
                                   </ui:InvokeCode>
-                                  <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="454,1690" sap2010:WorkflowViewState.IdRef="ForEach`1_1">
+                                  <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For each item in doctorant names array" sap:VirtualizedContainerService.HintSize="454,1690" sap2010:WorkflowViewState.IdRef="ForEach`1_1">
                                     <ui:ForEach.Body>
                                       <ActivityAction x:TypeArguments="x:Object">
                                         <ActivityAction.Argument>
@@ -1288,7 +1293,7 @@
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Kvieciama pagal LT" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_14" UnSafe="False" WorkflowFileName="wf_editPageByCategoryy.xaml">
+                                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Call to search for LT article" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_14" UnSafe="False" WorkflowFileName="wf_editPageByCategoryy.xaml">
                                               <ui:InvokeWorkflowFile.Arguments>
                                                 <InArgument x:TypeArguments="ui:Browser" x:Key="BROWSER">
                                                   <mca:CSharpValue x:TypeArguments="ui:Browser" sap2010:WorkflowViewState.IdRef="CSharpValue`1_110">BROWSER</mca:CSharpValue>
@@ -1303,14 +1308,14 @@
                                                 </InArgument>
                                               </ui:InvokeWorkflowFile.Arguments>
                                             </ui:InvokeWorkflowFile>
-                                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_15" UnSafe="False" WorkflowFileName="CopyEditorText.xaml">
+                                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Copy text from editor to clipboard" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_15" UnSafe="False" WorkflowFileName="CopyEditorText.xaml">
                                               <ui:InvokeWorkflowFile.Arguments>
                                                 <InOutArgument x:TypeArguments="x:String" x:Key="readValue">
                                                   <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_98">textVal</mca:CSharpReference>
                                                 </InOutArgument>
                                               </ui:InvokeWorkflowFile.Arguments>
                                             </ui:InvokeWorkflowFile>
-                                            <ui:InvokeCode ContinueOnError="{x:Null}" Code="String existingPat = @&quot;(&lt;p&gt;{slider\sDoktorant((?:(?!&lt;p&gt;{(slider|\/sliders)).)+[\r\n])+)&quot;;&#xA;&#xA;Regex existingReg = new Regex(existingPat);&#xA;Match match = existingReg.Match(str);&#xA;// Slider already present, replace&#xA;if (match.Success) {&#xA;    str = Regex.Replace(str, existingPat, updated + Environment.NewLine);&#xA;} else {&#xA;    // Slider not present, append at the bottom&#xA;    str = Regex.Replace(str, @&quot;&lt;p&gt;{\/sliders}&lt;/p&gt;&quot;, &quot;&quot;) + updated + Environment.NewLine + @&quot;&lt;p&gt;/sliders}&lt;/p&gt;&quot;;&#xA;}" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="334,164" sap2010:WorkflowViewState.IdRef="InvokeCode_17" Language="CSharp">
+                                            <ui:InvokeCode ContinueOnError="{x:Null}" Code="String existingPat = @&quot;(&lt;p&gt;{slider\sDoktorant((?:(?!&lt;p&gt;{(slider|\/sliders)).)+[\r\n])+)&quot;;&#xA;&#xA;Regex existingReg = new Regex(existingPat);&#xA;Match match = existingReg.Match(str);&#xA;// Slider already present, replace&#xA;if (match.Success) {&#xA;    str = Regex.Replace(str, existingPat, updated + Environment.NewLine);&#xA;} else {&#xA;    // Slider not present, append at the bottom&#xA;    str = Regex.Replace(str, @&quot;&lt;p&gt;{\/sliders}&lt;/p&gt;&quot;, &quot;&quot;) + updated + Environment.NewLine + @&quot;&lt;p&gt;/sliders}&lt;/p&gt;&quot;;&#xA;}" DisplayName="Replace new value to copied text" sap:VirtualizedContainerService.HintSize="334,164" sap2010:WorkflowViewState.IdRef="InvokeCode_17" Language="CSharp">
                                               <ui:InvokeCode.Arguments>
                                                 <InOutArgument x:TypeArguments="x:String" x:Key="str">
                                                   <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_99">textVal</mca:CSharpReference>
@@ -1320,7 +1325,7 @@
                                                 </InArgument>
                                               </ui:InvokeCode.Arguments>
                                             </ui:InvokeCode>
-                                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_16" UnSafe="False" WorkflowFileName="ClearEditorAndSaveChanges.xaml">
+                                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Paste text to editor and save" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_16" UnSafe="False" WorkflowFileName="ClearEditorAndSaveChanges.xaml">
                                               <ui:InvokeWorkflowFile.Arguments>
                                                 <InArgument x:TypeArguments="x:String" x:Key="textVal">
                                                   <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_114">textVal</mca:CSharpValue>
@@ -1334,7 +1339,7 @@
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Kvieciama pagal EN" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="wf_editPageByCategoryy.xaml">
+                                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Search for each doctorant EN article" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="wf_editPageByCategoryy.xaml">
                                               <ui:InvokeWorkflowFile.Arguments>
                                                 <InArgument x:TypeArguments="ui:Browser" x:Key="BROWSER">
                                                   <mca:CSharpValue x:TypeArguments="ui:Browser" sap2010:WorkflowViewState.IdRef="CSharpValue`1_117">BROWSER</mca:CSharpValue>
@@ -1349,14 +1354,14 @@
                                                 </InArgument>
                                               </ui:InvokeWorkflowFile.Arguments>
                                             </ui:InvokeWorkflowFile>
-                                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="CopyEditorText.xaml">
+                                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Copy EN text to clipboard" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="CopyEditorText.xaml">
                                               <ui:InvokeWorkflowFile.Arguments>
                                                 <InOutArgument x:TypeArguments="x:String" x:Key="readValue">
                                                   <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_100">textVal</mca:CSharpReference>
                                                 </InOutArgument>
                                               </ui:InvokeWorkflowFile.Arguments>
                                             </ui:InvokeWorkflowFile>
-                                            <ui:InvokeCode ContinueOnError="{x:Null}" Code="String existingPat = @&quot;(&lt;p&gt;{slider\sDoctoral studies((?:(?!&lt;p&gt;{(slider|\/sliders)).)+[\r\n])+)&quot;;&#xA;&#xA;Regex existingReg = new Regex(existingPat);&#xA;Match match = existingReg.Match(str);&#xA;// Slider already present, replace&#xA;if (match.Success) {&#xA;    str = Regex.Replace(str, existingPat, updated + Environment.NewLine);&#xA;} else {&#xA;    // Slider not present, append at the bottom&#xA;    str = Regex.Replace(str, @&quot;&lt;p&gt;{\/sliders}&lt;/p&gt;&quot;, &quot;&quot;) + updated + Environment.NewLine + @&quot;&lt;p&gt;/sliders}&lt;/p&gt;&quot;;&#xA;}" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="334,164" sap2010:WorkflowViewState.IdRef="InvokeCode_18" Language="CSharp">
+                                            <ui:InvokeCode ContinueOnError="{x:Null}" Code="String existingPat = @&quot;(&lt;p&gt;{slider\sDoctoral studies((?:(?!&lt;p&gt;{(slider|\/sliders)).)+[\r\n])+)&quot;;&#xA;&#xA;Regex existingReg = new Regex(existingPat);&#xA;Match match = existingReg.Match(str);&#xA;// Slider already present, replace&#xA;if (match.Success) {&#xA;    str = Regex.Replace(str, existingPat, updated + Environment.NewLine);&#xA;} else {&#xA;    // Slider not present, append at the bottom&#xA;    str = Regex.Replace(str, @&quot;&lt;p&gt;{\/sliders}&lt;/p&gt;&quot;, &quot;&quot;) + updated + Environment.NewLine + @&quot;&lt;p&gt;/sliders}&lt;/p&gt;&quot;;&#xA;}" DisplayName="Paste new text to clipboard copied text" sap:VirtualizedContainerService.HintSize="334,164" sap2010:WorkflowViewState.IdRef="InvokeCode_18" Language="CSharp">
                                               <ui:InvokeCode.Arguments>
                                                 <InOutArgument x:TypeArguments="x:String" x:Key="str">
                                                   <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_101">textVal</mca:CSharpReference>
@@ -1366,7 +1371,7 @@
                                                 </InArgument>
                                               </ui:InvokeCode.Arguments>
                                             </ui:InvokeCode>
-                                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="ClearEditorAndSaveChanges.xaml">
+                                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Paste text to editor and save" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="ClearEditorAndSaveChanges.xaml">
                                               <ui:InvokeWorkflowFile.Arguments>
                                                 <InArgument x:TypeArguments="x:String" x:Key="textVal">
                                                   <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_119">textVal</mca:CSharpValue>
@@ -1429,13 +1434,13 @@
                                     <av:PointCollection x:Key="ConnectorLocation">300,193.5 300,243.5</av:PointCollection>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <Sequence DisplayName="Vadovu duomenu nuskaitymas" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_54">
+                                <Sequence DisplayName="Vadovas data read" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_54">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:ExcelApplicationScope Password="{x:Null}" WorkbookPath="{x:Null}" CreateNewFile="False" DisplayName="Generate and read Metai LT" sap:VirtualizedContainerService.HintSize="452,1565" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_9" InstanceCachePeriod="3000">
+                                  <ui:ExcelApplicationScope Password="{x:Null}" WorkbookPath="{x:Null}" CreateNewFile="False" DisplayName="Generate and read Vadovas" sap:VirtualizedContainerService.HintSize="452,1565" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_9" InstanceCachePeriod="3000">
                                     <ui:ExcelApplicationScope.Body>
                                       <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                                         <ActivityAction.Argument>
@@ -1457,7 +1462,7 @@
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <ui:ExecuteMacro ContinueOnError="{x:Null}" MacroOutput="{x:Null}" DisplayName="Generate &quot;Metai&quot;" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExecuteMacro_8" MacroName="doktorantu_baze.xlsm!ThisWorkbook.vadovas" />
+                                            <ui:ExecuteMacro ContinueOnError="{x:Null}" MacroOutput="{x:Null}" DisplayName="Generate &quot;Vadovas&quot;" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExecuteMacro_8" MacroName="doktorantu_baze.xlsm!ThisWorkbook.vadovas" />
                                           </Sequence>
                                           <Assign sap:VirtualizedContainerService.HintSize="376,60" sap2010:WorkflowViewState.IdRef="Assign_19">
                                             <Assign.To>
@@ -1471,7 +1476,7 @@
                                               </InArgument>
                                             </Assign.Value>
                                           </Assign>
-                                          <ui:ExcelReadColumn DisplayName="Read DoktorantasName" sap:VirtualizedContainerService.HintSize="376,59" sap2010:WorkflowViewState.IdRef="ExcelReadColumn_14" SheetName="Vadovas" StartingCell="A2">
+                                          <ui:ExcelReadColumn DisplayName="Read Vadovas Name" sap:VirtualizedContainerService.HintSize="376,59" sap2010:WorkflowViewState.IdRef="ExcelReadColumn_14" SheetName="Vadovas" StartingCell="A2">
                                             <ui:ExcelReadColumn.Result>
                                               <OutArgument x:TypeArguments="scg:IEnumerable(x:Object)">
                                                 <mca:CSharpReference x:TypeArguments="scg:IEnumerable(x:Object)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_103">readValue</mca:CSharpReference>
@@ -1494,7 +1499,7 @@
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
                                           </ui:InvokeCode>
-                                          <ui:ExcelReadColumn DisplayName="Read DoktorantasLT" sap:VirtualizedContainerService.HintSize="376,59" sap2010:WorkflowViewState.IdRef="ExcelReadColumn_15" SheetName="Vadovas" StartingCell="B2">
+                                          <ui:ExcelReadColumn DisplayName="Read Vadovas LT text" sap:VirtualizedContainerService.HintSize="376,59" sap2010:WorkflowViewState.IdRef="ExcelReadColumn_15" SheetName="Vadovas" StartingCell="B2">
                                             <ui:ExcelReadColumn.Result>
                                               <OutArgument x:TypeArguments="scg:IEnumerable(x:Object)">
                                                 <mca:CSharpReference x:TypeArguments="scg:IEnumerable(x:Object)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_106">readValue</mca:CSharpReference>
@@ -1517,7 +1522,7 @@
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
                                           </ui:InvokeCode>
-                                          <ui:ExcelReadColumn DisplayName="Read DoktorantasEN" sap:VirtualizedContainerService.HintSize="376,59" sap2010:WorkflowViewState.IdRef="ExcelReadColumn_16" SheetName="Vadovas" StartingCell="C2">
+                                          <ui:ExcelReadColumn DisplayName="Read Vadovas EN text" sap:VirtualizedContainerService.HintSize="376,59" sap2010:WorkflowViewState.IdRef="ExcelReadColumn_16" SheetName="Vadovas" StartingCell="C2">
                                             <ui:ExcelReadColumn.Result>
                                               <OutArgument x:TypeArguments="scg:IEnumerable(x:Object)">
                                                 <mca:CSharpReference x:TypeArguments="scg:IEnumerable(x:Object)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_109">readValue</mca:CSharpReference>
@@ -1540,7 +1545,7 @@
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
                                           </ui:InvokeCode>
-                                          <ui:InvokeCode ContinueOnError="{x:Null}" Code="string tempLT = docLT[0];&#xA;string tempEN = docEN[0];&#xA;&#xA;        for(int i = 0; i &lt; nameList.Count()-1; i++) {&#xA;            if(!nameMap.ContainsKey(nameList[i]) &amp;&amp; nameList[i] == nameList[i+1]) {&#xA;                tempLT += Environment.NewLine + docLT[i+1];&#xA;                tempEN += Environment.NewLine + docEN[i+1];&#xA;            }&#xA;&#x9;&#x9; else {&#xA;                if(nameMap.ContainsKey(nameList[i])) continue;&#xA;                nameMap.Add(nameList[i], new List&lt;String&gt;(new string[] {tempLT, tempEN}));&#xA;                tempLT = docLT[i+1];&#xA;                tempEN = docEN[i+1];&#xA;            }&#xA;        }&#xA;            if(!nameMap.ContainsKey(nameList[nameList.Count()-1])) nameMap.Add(nameList[nameList.Count()-1], new List&lt;String&gt;(new string[] {tempLT, tempEN}));" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="376,164" sap2010:WorkflowViewState.IdRef="InvokeCode_22" Language="CSharp">
+                                          <ui:InvokeCode ContinueOnError="{x:Null}" Code="string tempLT = docLT[0];&#xA;string tempEN = docEN[0];&#xA;&#xA;        for(int i = 0; i &lt; nameList.Count()-1; i++) {&#xA;            if(!nameMap.ContainsKey(nameList[i]) &amp;&amp; nameList[i] == nameList[i+1]) {&#xA;                tempLT += Environment.NewLine + docLT[i+1];&#xA;                tempEN += Environment.NewLine + docEN[i+1];&#xA;            }&#xA;&#x9;&#x9; else {&#xA;                if(nameMap.ContainsKey(nameList[i])) continue;&#xA;                nameMap.Add(nameList[i], new List&lt;String&gt;(new string[] {tempLT, tempEN}));&#xA;                tempLT = docLT[i+1];&#xA;                tempEN = docEN[i+1];&#xA;            }&#xA;        }&#xA;            if(!nameMap.ContainsKey(nameList[nameList.Count()-1])) nameMap.Add(nameList[nameList.Count()-1], new List&lt;String&gt;(new string[] {tempLT, tempEN}));" DisplayName="Assign each Vadotas its LT and EN text" sap:VirtualizedContainerService.HintSize="376,164" sap2010:WorkflowViewState.IdRef="InvokeCode_22" Language="CSharp">
                                             <ui:InvokeCode.Arguments>
                                               <InOutArgument x:TypeArguments="s:String[]" x:Key="nameList">
                                                 <mca:CSharpReference x:TypeArguments="s:String[]" sap2010:WorkflowViewState.IdRef="CSharpReference`1_112">wbDocNames</mca:CSharpReference>
@@ -1579,38 +1584,38 @@
                                         <av:Size x:Key="ShapeSize">200,66</av:Size>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <Sequence DisplayName="Search For each Doctorant" sap:VirtualizedContainerService.HintSize="496,1925" sap2010:WorkflowViewState.IdRef="Sequence_58">
+                                    <Sequence DisplayName="Search and edit each Vadovas" sap:VirtualizedContainerService.HintSize="496,1986" sap2010:WorkflowViewState.IdRef="Sequence_58">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <ui:InvokeCode ContinueOnError="{x:Null}" Code="wbDocNames = wbDocNames.Distinct().ToArray();" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="454,164" sap2010:WorkflowViewState.IdRef="InvokeCode_23" Language="CSharp">
+                                      <ui:InvokeCode ContinueOnError="{x:Null}" Code="wbDocNames = wbDocNames.Distinct().ToArray();" DisplayName="Remove duplicates from Vadovas names array" sap:VirtualizedContainerService.HintSize="454,164" sap2010:WorkflowViewState.IdRef="InvokeCode_23" Language="CSharp">
                                         <ui:InvokeCode.Arguments>
                                           <InOutArgument x:TypeArguments="s:String[]" x:Key="wbDocNames">
                                             <mca:CSharpReference x:TypeArguments="s:String[]" sap2010:WorkflowViewState.IdRef="CSharpReference`1_116">wbDocNames</mca:CSharpReference>
                                           </InOutArgument>
                                         </ui:InvokeCode.Arguments>
                                       </ui:InvokeCode>
-                                      <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="454,1629" sap2010:WorkflowViewState.IdRef="ForEach`1_2">
+                                      <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For each Vadovas in the array" sap:VirtualizedContainerService.HintSize="454,1690" sap2010:WorkflowViewState.IdRef="ForEach`1_2">
                                         <ui:ForEach.Body>
                                           <ActivityAction x:TypeArguments="x:Object">
                                             <ActivityAction.Argument>
                                               <DelegateInArgument x:TypeArguments="x:Object" Name="item" />
                                             </ActivityAction.Argument>
-                                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="418,1495" sap2010:WorkflowViewState.IdRef="Sequence_57">
+                                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="418,1556" sap2010:WorkflowViewState.IdRef="Sequence_57">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <Sequence sap:VirtualizedContainerService.HintSize="376,651" sap2010:WorkflowViewState.IdRef="Sequence_55">
+                                              <Sequence sap:VirtualizedContainerService.HintSize="376,712" sap2010:WorkflowViewState.IdRef="Sequence_55">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Kvieciama pagal LT" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_20" UnSafe="False" WorkflowFileName="wf_editPageByCategoryy.xaml">
+                                                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Search for article in LT language" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_20" UnSafe="False" WorkflowFileName="wf_editPageByCategoryy.xaml">
                                                   <ui:InvokeWorkflowFile.Arguments>
                                                     <InArgument x:TypeArguments="ui:Browser" x:Key="BROWSER">
                                                       <mca:CSharpValue x:TypeArguments="ui:Browser" sap2010:WorkflowViewState.IdRef="CSharpValue`1_121">BROWSER</mca:CSharpValue>
@@ -1625,7 +1630,7 @@
                                                     </InArgument>
                                                   </ui:InvokeWorkflowFile.Arguments>
                                                 </ui:InvokeWorkflowFile>
-                                                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_21" UnSafe="False" WorkflowFileName="CopyEditorText.xaml">
+                                                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Copy the text from article to clipboard" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_21" UnSafe="False" WorkflowFileName="CopyEditorText.xaml">
                                                   <ui:InvokeWorkflowFile.Arguments>
                                                     <InOutArgument x:TypeArguments="x:String" x:Key="readValue">
                                                       <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_117">textVal</mca:CSharpReference>
@@ -1633,11 +1638,12 @@
                                                   </ui:InvokeWorkflowFile.Arguments>
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
                                                 </ui:InvokeWorkflowFile>
-                                                <ui:InvokeCode ContinueOnError="{x:Null}" Code="String existingPat = @&quot;(&lt;p&gt;{slider\sMokslinink.\srengimas((?:(?!&lt;p&gt;{(slider|\/sliders)).)+[\r\n])+)&quot;;&#xD;&#xA;&#xD;&#xA;        Regex existingReg = new Regex(existingPat);&#xD;&#xA;        Match match = existingReg.Match(str);&#xD;&#xA;        // Slider already present, replace&#xD;&#xA;        if (match.Success) {&#xD;&#xA;            str = Regex.Replace(str, existingPat, updated + Environment.NewLine);&#xD;&#xA;        } else {&#xD;&#xA;            // Slider not present, append at the bottom&#xD;&#xA;            str = Regex.Replace(str, @&quot;&lt;p&gt;{\/sliders}&lt;/p&gt;&quot;, &quot;&quot;) + updated + Environment.NewLine + @&quot;&lt;p&gt;/sliders}&lt;/p&gt;&quot;;&#xD;&#xA;        }" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="334,164" sap2010:WorkflowViewState.IdRef="InvokeCode_24" Language="CSharp">
+                                                <ui:InvokeCode ContinueOnError="{x:Null}" Code="String existingPat = @&quot;(&lt;p&gt;{slider\sMokslinink.\srengimas((?:(?!&lt;p&gt;{(slider|\/sliders)).)+[\r\n])+)&quot;;&#xD;&#xA;&#xD;&#xA;        Regex existingReg = new Regex(existingPat);&#xD;&#xA;        Match match = existingReg.Match(str);&#xD;&#xA;        // Slider already present, replace&#xD;&#xA;        if (match.Success) {&#xD;&#xA;            str = Regex.Replace(str, existingPat, updated + Environment.NewLine);&#xD;&#xA;        } else {&#xD;&#xA;            // Slider not present, append at the bottom&#xD;&#xA;            str = Regex.Replace(str, @&quot;&lt;p&gt;{\/sliders}&lt;/p&gt;&quot;, &quot;&quot;) + updated + Environment.NewLine + @&quot;&lt;p&gt;/sliders}&lt;/p&gt;&quot;;&#xD;&#xA;        }" DisplayName="Change the text with new value" sap:VirtualizedContainerService.HintSize="334,164" sap2010:WorkflowViewState.IdRef="InvokeCode_24" Language="CSharp">
                                                   <ui:InvokeCode.Arguments>
                                                     <InOutArgument x:TypeArguments="x:String" x:Key="str">
                                                       <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_118">textVal</mca:CSharpReference>
@@ -1647,7 +1653,7 @@
                                                     </InArgument>
                                                   </ui:InvokeCode.Arguments>
                                                 </ui:InvokeCode>
-                                                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_22" UnSafe="False" WorkflowFileName="ClearEditorAndSaveChanges.xaml">
+                                                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Apply new text to article and save" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_22" UnSafe="False" WorkflowFileName="ClearEditorAndSaveChanges.xaml">
                                                   <ui:InvokeWorkflowFile.Arguments>
                                                     <InArgument x:TypeArguments="x:String" x:Key="textVal">
                                                       <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_125">textVal</mca:CSharpValue>
@@ -1777,7 +1783,7 @@
                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <ui:ExecuteMacro ContinueOnError="{x:Null}" MacroOutput="{x:Null}" DisplayName="Generate &quot;Metai&quot;" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExecuteMacro_9" MacroName="doktorantu_baze.xlsm!ThisWorkbook.grupe" />
+                                              <ui:ExecuteMacro ContinueOnError="{x:Null}" MacroOutput="{x:Null}" DisplayName="Generate &quot;Grupe&quot;" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExecuteMacro_9" MacroName="doktorantu_baze.xlsm!ThisWorkbook.grupe" />
                                             </Sequence>
                                           </ui:CommentOut.Body>
                                         </ui:CommentOut>
@@ -1863,7 +1869,7 @@
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
                                       </ui:InvokeCode>
-                                      <ui:InvokeCode ContinueOnError="{x:Null}" Code="string tempLT = docLT[0];&#xA;string tempEN = docEN[0];&#xA;&#xA;        for(int i = 0; i &lt; nameList.Count()-1; i++) {&#xA;            if(!nameMap.ContainsKey(nameList[i]) &amp;&amp; nameList[i] == nameList[i+1]) {&#xA;                tempLT += Environment.NewLine + docLT[i+1];&#xA;                tempEN += Environment.NewLine + docEN[i+1];&#xA;            }&#xA;&#x9;&#x9; else {&#xA;                if(nameMap.ContainsKey(nameList[i])) continue;&#xA;                nameMap.Add(nameList[i], new List&lt;String&gt;(new string[] {tempLT, tempEN}));&#xA;                tempLT = docLT[i+1];&#xA;                tempEN = docEN[i+1];&#xA;            }&#xA;        }&#xA;            if(!nameMap.ContainsKey(nameList[nameList.Count()-1])) nameMap.Add(nameList[nameList.Count()-1], new List&lt;String&gt;(new string[] {tempLT, tempEN}));" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="478,164" sap2010:WorkflowViewState.IdRef="InvokeCode_29" Language="CSharp">
+                                      <ui:InvokeCode ContinueOnError="{x:Null}" Code="string tempLT = docLT[0];&#xA;string tempEN = docEN[0];&#xA;&#xA;        for(int i = 0; i &lt; nameList.Count()-1; i++) {&#xA;            if(!nameMap.ContainsKey(nameList[i]) &amp;&amp; nameList[i] == nameList[i+1]) {&#xA;                tempLT += Environment.NewLine + docLT[i+1];&#xA;                tempEN += Environment.NewLine + docEN[i+1];&#xA;            }&#xA;&#x9;&#x9; else {&#xA;                if(nameMap.ContainsKey(nameList[i])) continue;&#xA;                nameMap.Add(nameList[i], new List&lt;String&gt;(new string[] {tempLT, tempEN}));&#xA;                tempLT = docLT[i+1];&#xA;                tempEN = docEN[i+1];&#xA;            }&#xA;        }&#xA;            if(!nameMap.ContainsKey(nameList[nameList.Count()-1])) nameMap.Add(nameList[nameList.Count()-1], new List&lt;String&gt;(new string[] {tempLT, tempEN}));" DisplayName="Assign each group its LT and EN values" sap:VirtualizedContainerService.HintSize="478,164" sap2010:WorkflowViewState.IdRef="InvokeCode_29" Language="CSharp">
                                         <ui:InvokeCode.Arguments>
                                           <InOutArgument x:TypeArguments="s:String[]" x:Key="nameList">
                                             <mca:CSharpReference x:TypeArguments="s:String[]" sap2010:WorkflowViewState.IdRef="CSharpReference`1_131">wbDocNames</mca:CSharpReference>
@@ -1879,7 +1885,7 @@
                                           </InOutArgument>
                                         </ui:InvokeCode.Arguments>
                                       </ui:InvokeCode>
-                                      <ui:InvokeCode ContinueOnError="{x:Null}" Code="wbDocNames = wbDocNames.Distinct().ToArray();" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="478,164" sap2010:WorkflowViewState.IdRef="InvokeCode_30" Language="CSharp">
+                                      <ui:InvokeCode ContinueOnError="{x:Null}" Code="wbDocNames = wbDocNames.Distinct().ToArray();" DisplayName="Remove duplicate values from Group array" sap:VirtualizedContainerService.HintSize="478,164" sap2010:WorkflowViewState.IdRef="InvokeCode_30" Language="CSharp">
                                         <ui:InvokeCode.Arguments>
                                           <InOutArgument x:TypeArguments="s:String[]" x:Key="wbDocNames">
                                             <mca:CSharpReference x:TypeArguments="s:String[]" sap2010:WorkflowViewState.IdRef="CSharpReference`1_135">wbDocNames</mca:CSharpReference>
@@ -1940,14 +1946,14 @@
                                                 </InArgument>
                                               </ui:InvokeWorkflowFile.Arguments>
                                             </ui:InvokeWorkflowFile>
-                                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_27" UnSafe="False" WorkflowFileName="CopyEditorText.xaml">
+                                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Copy editor text to clipboard" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_27" UnSafe="False" WorkflowFileName="CopyEditorText.xaml">
                                               <ui:InvokeWorkflowFile.Arguments>
                                                 <InOutArgument x:TypeArguments="x:String" x:Key="readValue">
                                                   <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_136">textVal</mca:CSharpReference>
                                                 </InOutArgument>
                                               </ui:InvokeWorkflowFile.Arguments>
                                             </ui:InvokeWorkflowFile>
-                                            <ui:InvokeCode ContinueOnError="{x:Null}" Code="String existingPat = @&quot;((&lt;h3&gt;Doktorantai&lt;\/h3&gt;[\r\n])((?:(?!&lt;p&gt;{(slider|\/sliders)).)*[\r\n])+)&quot;;&#xD;&#xA;&#xD;&#xA;        &#xD;&#xA;        Regex existingReg = new Regex(existingPat);&#xD;&#xA;        Match match = existingReg.Match(str);&#xD;&#xA;        // Slider already present, replace&#xD;&#xA;        if (match.Success) {&#xD;&#xA;            str = Regex.Replace(str, existingPat, match.Groups[2].ToString() + Environment.NewLine + updated + Environment.NewLine);&#xD;&#xA;        } else {&#xD;&#xA;            // Slider not present, append at the bottom&#xD;&#xA;            str = Regex.Replace(str, @&quot;&lt;p&gt;{\/sliders}&lt;/p&gt;&quot;, &quot;&quot;) &#xD;&#xA;                + &quot;&lt;p&gt;{slider Mokslas ir studijos}&lt;/p&gt;&quot; &#xD;&#xA;                + Environment.NewLine &#xD;&#xA;                + &quot;&lt;h3&gt;Doktorantai&lt;/h3&gt;&quot;&#xD;&#xA;                + Environment.NewLine &#xD;&#xA;                + updated &#xD;&#xA;                + Environment.NewLine &#xD;&#xA;                + @&quot;&lt;p&gt;/sliders}&lt;/p&gt;&quot;;&#xD;&#xA;        }" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="334,164" sap2010:WorkflowViewState.IdRef="InvokeCode_31" Language="CSharp">
+                                            <ui:InvokeCode ContinueOnError="{x:Null}" Code="String existingPat = @&quot;((&lt;h3&gt;Doktorantai&lt;\/h3&gt;[\r\n])((?:(?!&lt;p&gt;{(slider|\/sliders)).)*[\r\n])+)&quot;;&#xD;&#xA;&#xD;&#xA;        &#xD;&#xA;        Regex existingReg = new Regex(existingPat);&#xD;&#xA;        Match match = existingReg.Match(str);&#xD;&#xA;        // Slider already present, replace&#xD;&#xA;        if (match.Success) {&#xD;&#xA;            str = Regex.Replace(str, existingPat, match.Groups[2].ToString() + Environment.NewLine + updated + Environment.NewLine);&#xD;&#xA;        } else {&#xD;&#xA;            // Slider not present, append at the bottom&#xD;&#xA;            str = Regex.Replace(str, @&quot;&lt;p&gt;{\/sliders}&lt;/p&gt;&quot;, &quot;&quot;) &#xD;&#xA;                + &quot;&lt;p&gt;{slider Mokslas ir studijos}&lt;/p&gt;&quot; &#xD;&#xA;                + Environment.NewLine &#xD;&#xA;                + &quot;&lt;h3&gt;Doktorantai&lt;/h3&gt;&quot;&#xD;&#xA;                + Environment.NewLine &#xD;&#xA;                + updated &#xD;&#xA;                + Environment.NewLine &#xD;&#xA;                + @&quot;&lt;p&gt;/sliders}&lt;/p&gt;&quot;;&#xD;&#xA;        }" DisplayName="Add Group LT paragraph to copied text" sap:VirtualizedContainerService.HintSize="334,164" sap2010:WorkflowViewState.IdRef="InvokeCode_31" Language="CSharp">
                                               <ui:InvokeCode.Arguments>
                                                 <InOutArgument x:TypeArguments="x:String" x:Key="str">
                                                   <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_137">textVal</mca:CSharpReference>
@@ -1957,7 +1963,7 @@
                                                 </InArgument>
                                               </ui:InvokeCode.Arguments>
                                             </ui:InvokeCode>
-                                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_28" UnSafe="False" WorkflowFileName="ClearEditorAndSaveChanges.xaml">
+                                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Paste new text and save article" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_28" UnSafe="False" WorkflowFileName="ClearEditorAndSaveChanges.xaml">
                                               <ui:InvokeWorkflowFile.Arguments>
                                                 <InArgument x:TypeArguments="x:String" x:Key="textVal">
                                                   <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_139">textVal</mca:CSharpValue>
@@ -2025,14 +2031,14 @@
                                                     </InArgument>
                                                   </ui:InvokeWorkflowFile.Arguments>
                                                 </ui:InvokeWorkflowFile>
-                                                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_30" UnSafe="False" WorkflowFileName="CopyEditorText.xaml">
+                                                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Copy text from editor to clipboard" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_30" UnSafe="False" WorkflowFileName="CopyEditorText.xaml">
                                                   <ui:InvokeWorkflowFile.Arguments>
                                                     <InOutArgument x:TypeArguments="x:String" x:Key="readValue">
                                                       <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_138">textVal</mca:CSharpReference>
                                                     </InOutArgument>
                                                   </ui:InvokeWorkflowFile.Arguments>
                                                 </ui:InvokeWorkflowFile>
-                                                <ui:InvokeCode ContinueOnError="{x:Null}" Code="String existingPat = @&quot;((&lt;h3&gt;Phd\sStudents&lt;\/h3&gt;[\r\n])((?:(?!&lt;p&gt;{(slider|\/sliders)).)*[\r\n])+)&quot;;&#xD;&#xA;&#xD;&#xA;        &#xD;&#xA;        Regex existingReg = new Regex(existingPat);&#xD;&#xA;        Match match = existingReg.Match(str);&#xD;&#xA;        // Slider already present, replace&#xD;&#xA;        if (match.Success) {&#xD;&#xA;            str = Regex.Replace(str, existingPat, match.Groups[2].ToString() + Environment.NewLine + updated + Environment.NewLine);&#xD;&#xA;        } else {&#xD;&#xA;            // Slider not present, append at the bottom&#xD;&#xA;            str = Regex.Replace(str, @&quot;&lt;p&gt;{\/sliders}&lt;/p&gt;&quot;, &quot;&quot;) &#xD;&#xA;                + &quot;&lt;p&gt;{slider Science and Education}&lt;/p&gt;&quot; &#xD;&#xA;                + Environment.NewLine &#xD;&#xA;                + &quot;&lt;h3&gt;Phd Students&lt;/h3&gt;&quot;&#xD;&#xA;                + Environment.NewLine &#xD;&#xA;                + updated &#xD;&#xA;                + Environment.NewLine &#xD;&#xA;                + @&quot;&lt;p&gt;/sliders}&lt;/p&gt;&quot;;&#xD;&#xA;        }" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="334,164" sap2010:WorkflowViewState.IdRef="InvokeCode_32" Language="CSharp">
+                                                <ui:InvokeCode ContinueOnError="{x:Null}" Code="String existingPat = @&quot;((&lt;h3&gt;Phd\sStudents&lt;\/h3&gt;[\r\n])((?:(?!&lt;p&gt;{(slider|\/sliders)).)*[\r\n])+)&quot;;&#xD;&#xA;&#xD;&#xA;        &#xD;&#xA;        Regex existingReg = new Regex(existingPat);&#xD;&#xA;        Match match = existingReg.Match(str);&#xD;&#xA;        // Slider already present, replace&#xD;&#xA;        if (match.Success) {&#xD;&#xA;            str = Regex.Replace(str, existingPat, match.Groups[2].ToString() + Environment.NewLine + updated + Environment.NewLine);&#xD;&#xA;        } else {&#xD;&#xA;            // Slider not present, append at the bottom&#xD;&#xA;            str = Regex.Replace(str, @&quot;&lt;p&gt;{\/sliders}&lt;/p&gt;&quot;, &quot;&quot;) &#xD;&#xA;                + &quot;&lt;p&gt;{slider Science and Education}&lt;/p&gt;&quot; &#xD;&#xA;                + Environment.NewLine &#xD;&#xA;                + &quot;&lt;h3&gt;Phd Students&lt;/h3&gt;&quot;&#xD;&#xA;                + Environment.NewLine &#xD;&#xA;                + updated &#xD;&#xA;                + Environment.NewLine &#xD;&#xA;                + @&quot;&lt;p&gt;/sliders}&lt;/p&gt;&quot;;&#xD;&#xA;        }" DisplayName="Edit copied text with new added paragraph" sap:VirtualizedContainerService.HintSize="334,164" sap2010:WorkflowViewState.IdRef="InvokeCode_32" Language="CSharp">
                                                   <ui:InvokeCode.Arguments>
                                                     <InOutArgument x:TypeArguments="x:String" x:Key="str">
                                                       <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_139">textVal</mca:CSharpReference>
@@ -2042,7 +2048,7 @@
                                                     </InArgument>
                                                   </ui:InvokeCode.Arguments>
                                                 </ui:InvokeCode>
-                                                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_31" UnSafe="False" WorkflowFileName="ClearEditorAndSaveChanges.xaml">
+                                                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Paste text in editor and save" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_31" UnSafe="False" WorkflowFileName="ClearEditorAndSaveChanges.xaml">
                                                   <ui:InvokeWorkflowFile.Arguments>
                                                     <InArgument x:TypeArguments="x:String" x:Key="textVal">
                                                       <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_144">textVal</mca:CSharpValue>
